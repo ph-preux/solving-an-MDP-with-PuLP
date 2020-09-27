@@ -3,7 +3,7 @@
 
  Resolution of Howard's taxicab MDP by linear programming.
 
- Code developed by Philippe Preux, Université de Lille, France & Inria.
+ Code developed by Philippe Preux, Universite de Lille, France & Inria.
  Put online on September 23rd, 2020, on https://ph-preux.github.io/software/
 
  This code has been developed and is provided to the community only to
@@ -35,6 +35,8 @@ P = np.array ([[[1/2, 1/4, 1/4],
 R = np.array ([10, 4, 8, 8, 2, 4, 4, 6, 4, 14, 0, 18, 0, 0, 0, 8, 16, 8, 10, 2, 8, 6, 4, 2, 4, 0, 8])
 R = R.reshape ([N, A, N])
 gamma = .9
+# in states 0 and 2, all 3 actions are possible. In state 1, only actions 0 and 2 are possibles:
+possible_actions = np.array ([[0, 1, 2], [0, 2], [0, 1, 2]])
 
 # define the LP
 v = pulp.LpVariable.dicts ("s", (range (N))) # the variables
@@ -42,7 +44,7 @@ prob = pulp.LpProblem ("taxicab", pulp.LpMinimize) # minimize the objective func
 prob += sum ([v [i] for i in range (N)]) # defines the objective function
 # now, we define the constrain: there is one for each (state, action) pair.
 for i in range (N):
-    for a in range (0, 3):
+    for a in possible_actions [i]:
         prob += v [i] - gamma * sum (P [i, a, j] * v [j] for j in range(N)) >= sum (P [i, a, j] * R [i, a, j] for j in range(N))
 
 # Solve the LP
