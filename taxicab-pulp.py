@@ -4,7 +4,8 @@
  Resolution of Howard's taxicab MDP by linear programming.
 
  Code developed by Philippe Preux, Universite de Lille, France & Inria.
- Put online on September 23rd, 2020, on https://ph-preux.github.io/software/
+ Originally put online on September 23rd, 2020, on https://ph-preux.github.io/software/
+  This version is of September 27th, 2020.
 
  This code has been developed and is provided to the community only to
  serve as a demonstrator. It might not work on your computer, it mght not
