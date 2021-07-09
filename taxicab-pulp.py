@@ -1,6 +1,6 @@
 '''
  Demo code to illustrate how to solve an MDP with LP in Python.
-
+ 
  Resolution of Howard's taxicab MDP by linear programming.
 
  Code developed by Philippe Preux, Universite de Lille, France & Inria.
