@@ -1,6 +1,6 @@
 # Demo of a python code to solve a Markov Decision Problem with PuLP
 
-[This code has moved to this place.](https://philippe-preux.github.io/software/solving-an-MDP-with-PuLP).
+[This code has moved to this place](https://philippe-preux.github.io/software/solving-an-MDP-with-PuLP).
 
 I just leave the Readme here.
 
